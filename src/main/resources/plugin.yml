@@ -1,0 +1,12 @@
+name: InvSee
+version: 1.0-Snapshot
+main: de.blaumeise03.invSee.InvSee
+author: Blaumeise03
+
+commands:
+  invSee:
+    description: Show the Inventory of a Player and modify it.
+permissions:
+  invSee.invSee:
+    description: Permission for InvSee
+    default: op
