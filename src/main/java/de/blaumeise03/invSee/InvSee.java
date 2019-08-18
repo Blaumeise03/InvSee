@@ -17,24 +17,54 @@
 
 package de.blaumeise03.invSee;
 
-import org.bukkit.command.Command;
+
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class InvSee extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getLogger().info("Enabling...");
 
+        getLogger().info("Adding Commands...");
+        new Command("invSee", "Zeigt dir das Inventar eines Spielers.", new Permission("invSee.invSee"), true) {
+            @Override
+            public void onCommand(String[] args, CommandSender sender) {
+                if (args.length == 0) {
+                    sender.sendMessage("§4Bitte geb einen Spieler an: /invSee <Spieler>");
+                    return;
+                }
+
+                Player target = Bukkit.getPlayer(args[0]);
+                if (target == null) {
+                    sender.sendMessage("§4Kann den angegebenen Spieler nicht finden!");
+                    return;
+                }
+                Player player = (Player) sender;
+                Inventory inventory = target.getInventory();
+                player.openInventory(inventory);
+                player.sendMessage("§aDu bist nun im Inventar von §6" + target.getName());
+            }
+        };
+
+        getLogger().info("Enabled!");
     }
 
     @Override
     public void onDisable() {
+        getLogger().info("Disabling...");
 
+        getLogger().info("Disabled!");
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        return super.onCommand(sender, command, label, args);
+    public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {
+        Command.executeCommand(args, sender, label);
+        return true;
     }
 }
