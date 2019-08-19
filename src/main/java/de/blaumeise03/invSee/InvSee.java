@@ -47,6 +47,7 @@ public class InvSee extends JavaPlugin {
                 }
                 Player player = (Player) sender;
                 Inventory inventory = target.getInventory();
+                getLogger().info("Player " + player.getName() + "opens the Inventory of " + target.getName() + ".");
                 player.openInventory(inventory);
                 player.sendMessage("§aDu bist nun im Inventar von §6" + target.getName());
             }
@@ -67,6 +68,7 @@ public class InvSee extends JavaPlugin {
                 }
                 Player player = (Player) sender;
                 Inventory inventory = target.getEnderChest();
+                getLogger().info("Player " + player.getName() + "opens the Enderchest of " + target.getName() + ".");
                 player.openInventory(inventory);
                 player.sendMessage("§aDu bist nun in der Enderkiste von §6" + target.getName());
             }
