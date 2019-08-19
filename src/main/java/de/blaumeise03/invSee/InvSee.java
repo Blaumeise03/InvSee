@@ -52,6 +52,26 @@ public class InvSee extends JavaPlugin {
             }
         };
 
+        new Command("enderSee", "Zeigt dir die Enderkiste eines Spielers.", new Permission("invSee.enderSee"), true) {
+            @Override
+            public void onCommand(String[] args, CommandSender sender) {
+                if (args.length == 0) {
+                    sender.sendMessage("§4Bitte geb einen Spieler an: /enderSee <Spieler>");
+                    return;
+                }
+
+                Player target = Bukkit.getPlayer(args[0]);
+                if (target == null) {
+                    sender.sendMessage("§4Kann den angegebenen Spieler nicht finden!");
+                    return;
+                }
+                Player player = (Player) sender;
+                Inventory inventory = target.getEnderChest();
+                player.openInventory(inventory);
+                player.sendMessage("§aDu bist nun in der Enderkiste von §6" + target.getName());
+            }
+        };
+
         getLogger().info("Enabled!");
     }
 
