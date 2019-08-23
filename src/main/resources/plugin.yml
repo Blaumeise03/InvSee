@@ -1,17 +1,20 @@
 name: InvSee
-version: 1.0-Snapshot
+version: 1.0-Release
 main: de.blaumeise03.invSee.InvSee
 author: Blaumeise03
 
 commands:
   invSee:
-    description: Show the Inventory of a Player and modify it.
+    description: Shows the Inventory of a Player and modify it.
   enderSee:
-    description: Show the EnderChest of a Player and modify it.
+    description: Shows the EnderChest of a Player and modify it.
 permissions:
   invSee.invSee:
     description: Permission for InvSee
     default: op
   invSee.enderSee:
     description: Permission for EnderSee
+    default: op
+  invSee.*:
+    description: Wildcart
     default: op
