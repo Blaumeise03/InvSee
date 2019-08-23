@@ -42,7 +42,26 @@ public class InvSee extends JavaPlugin {
 
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target == null) {
-                    sender.sendMessage("§4Kann den angegebenen Spieler nicht finden!");
+                    if (args.length == 2) {
+                        /*if(args[1].equalsIgnoreCase("offline")){
+                            sender.sendMessage("§4Suche nach offline-Spieler...");
+                            for (OfflinePlayer offlinePlayer : Bukkit.getOfflinePlayers()) {
+                                if(offlinePlayer.hasPlayedBefore()){
+                                    if(offlinePlayer.getName() != null)
+                                        if(offlinePlayer.getName().equalsIgnoreCase(args[0])){
+                                            target = offlinePlayer.getPlayer();
+                                            break;
+                                        }
+                                }
+                            }
+                        }*/ //Does not work, can't get Player-Data of offline-Players
+                    } else {
+                        sender.sendMessage("§4Kann den angegebenen Spieler nicht finden!");
+                        return;
+                    }
+                }
+                if (target == null) {
+                    sender.sendMessage("§4Konnte den angegebenen Spieler nicht finden!");
                     return;
                 }
                 Player player = (Player) sender;
