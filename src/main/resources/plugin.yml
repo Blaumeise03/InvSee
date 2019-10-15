@@ -16,5 +16,8 @@ permissions:
     description: Permission for EnderSee
     default: op
   invSee.*:
-    description: Wildcart
+    description: Wildcard
     default: op
+    children:
+      invsee.invSee: true
+      invsee.enderSee: true

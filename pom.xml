@@ -19,6 +19,12 @@
             <id>bungeecord-repo</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
+
+        <!--repository>
+            <id>blaumeise03-ftp</id>
+            <name>Blaumeise03</name>
+            <url>http://blaumeise03.de/maven2</url>
+        </repository-->
     </repositories>
     <dependencies>
         <!--Spigot API-->
@@ -43,6 +49,13 @@
             <artifactId>craftbukkit</artifactId>
             <version>1.14.4-R0.1-SNAPSHOT</version>
         </dependency>
+
+        <!--My own>
+        <dependency>
+            <groupId>de.blaumeise03</groupId>
+            <artifactId>SpigotUtils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency-->
     </dependencies>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
