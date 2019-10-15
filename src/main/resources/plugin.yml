@@ -1,7 +1,11 @@
 name: InvSee
 version: 1.0-Release
 main: de.blaumeise03.invSee.InvSee
+description: A invSee plugin.
+api-version: 1.13
 author: Blaumeise03
+website: http://blaumeise03.de/
+
 
 commands:
   invSee:
