@@ -10,8 +10,10 @@ website: http://blaumeise03.de/
 commands:
   invSee:
     description: Shows the Inventory of a Player and modify it.
+    permission: invSee.invSee
   enderSee:
     description: Shows the EnderChest of a Player and modify it.
+    permission: invSee.enderSee
 permissions:
   invSee.invSee:
     description: Permission for InvSee
